@@ -1,0 +1,15 @@
+shell：
+
+for循环：
+	对于数字，每循环刷新一次i，共10次
+	如：	for i in {1..10}
+	
+	对于字母，参数需要空格才能作为下一个循环参数，“，”与“‘ ’”作为整体
+	如：	for i in‘ls’
+		do
+		echo $i is file name 		//"ls"直接整体替换到$i中
+
+	如：	for i in ls，lb，lc		//如同上述
+	
+	但如：	for i in ls lb lc		//则会循环刷新
+
