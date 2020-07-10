@@ -1,0 +1,7 @@
+服务端：sshd	（SSHD服务端）	
+客户端：client	（secureCRT客户端）
+
+zmodem 服务
+	rz命令：（通过zmodem接受客户端文件）
+
+	sz命令：（发送到客户端）
