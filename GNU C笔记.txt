@@ -1,0 +1,71 @@
+GCC：GNU C Complier  ->collection
+
+gcc    -o    输出信息（文件）   输入信息（文件）
+
+	后缀名敏感
+
+gcc -v -o : -v 显示详细信息
+
+输入：gcc -o build file.c
+
+【.c->.i->.s->.o->.bin】
+
+预处理：宏替换
+
+	cpp -o a.i file.c
+
+	【gcc -E】
+编译
+
+	/usr/lib/gcc/x86_64-linux-gnu/4.8/cc1  -o a.s  file.c
+
+	【gcc -S】代替：/usr/lib/gcc/x86_64-linux-gnu/4.8/cc1
+
+	gcc -S -o a.s file.c
+
+汇编
+
+	 as -o a.o a.s
+
+	【gcc -c】：代替上两步
+
+链接
+
+	/usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 -o build a.o ....  /*最终的命名*/
+
+	【gcc -o 】：最终步
+
+预处理错误：
+	not found :
+		#include “”	
+		#include  <>
+		
+		gcc -I 查询头文件的目录 -o build file.c 	
+
+链接错误：
+	原材料不够：
+	undefined reference to `func'
+		gcc -o xxxxx.c xxxx.c
+		gcc -o xxxxx.o xxxx.o	
+	多了：
+	multiple definition of 'func'
+		重定义
+		
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
