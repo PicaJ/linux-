@@ -1,0 +1,35 @@
+useradd 【选项】 用户名
+passwd 用户名
+	在etc/.. 目录下更新配置
+	【选项】：手工配置信息
+
+修改用户密码：
+	passwd 【选项】 用户名
+	
+		root下，passwd 用户名 ->修改其他用户密码
+		普通下，passwd ->修改自己密码
+	
+	echo "123" | passwd --stdin 用户名 	//管道输给stdin用户名设密码
+
+修改用户信息：
+	usermod：针对已存用户修改信息
+		支持 useradd 的选项
+	
+	chage ：修改用户密码状态
+
+用户管理命令：
+	userdel -r 用户名		//【-r】删除用户连同家目录
+	
+	su 【选项】 用户名		
+		su - 用户名：“-”代表连带用户的环境变量一起切换
+		su - 用户名 -c 【命令名】：借“用户身份”，仅执行一次命令，不切换用户身份
+	
+添加用户组：
+	groupadd 【选项】 组名
+		-g GID ：指定组ID
+	groupmod -n testgrp grooup 1		//组名改为testgrp
+		-n ：指定名
+	groupdel 组名			//删除组（不可存在初始组）
+
+
+
